@@ -7,20 +7,18 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Practice Flutter Hooks',
-      theme: ThemeData.light(),
-      initialRoute: '/',
-      routes: {
-        '/': (_) => HomePage(),
-        '/increment': (_) => IncrementPage(),
-        '/edit_text': (_) => ProviderScope(
-              child: EditTextPage(),
-            ),
-        '/list': (_) => ProviderScope(
-              child: ListPage(),
-            ),
-      },
+    return ProviderScope(
+      child: MaterialApp(
+        title: 'Practice Flutter Hooks',
+        theme: ThemeData.light(),
+        initialRoute: '/',
+        routes: {
+          '/': (_) => HomePage(),
+          '/increment': (_) => IncrementPage(),
+          '/edit_text': (_) => EditTextPage(),
+          '/list': (_) => ListPage(),
+        },
+      ),
     );
   }
 }
